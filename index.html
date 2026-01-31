@@ -1,15 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Link Bunga</title>
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#fff5fb;
+    font-family: Arial, sans-serif;
+    overflow:hidden;
+}
+
+/* LINK UTAMA */
+.bunga-link{
+    position:relative;
+    font-size:8vw; /* GEDE di HP */
+    font-weight:bold;
+    text-decoration:none;
+    color:#ff4da6;
+    padding:20px 40px;
+    border-radius:20px;
+    background:#ffe6f2;
+    animation: glow 2s infinite alternate;
+}
+
+/* EFEK GLOW */
+@keyframes glow{
+    from{
+        box-shadow:0 0 10px #ff9ad5;
+    }
+    to{
+        box-shadow:0 0 30px #ff4da6;
+    }
+}
+
+/* BUNGA */
+.bunga{
+    position:absolute;
+    width:25px;
+    height:25px;
+    background:🌸;
+    font-size:24px;
+    animation: jatuh 4s linear infinite;
+}
+
+@keyframes jatuh{
+    0%{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(300px) rotate(360deg);
+        opacity:0;
+    }
+}
+</style>
 </head>
+
 <body>
-    <div>
-        <ul>
-            <li><a href="web1.html">masuk kesni yuuuk</a></li>
-        </ul>
-    </div>
+
+<a href="https://google.com" class="bunga-link">
+    Masuk ke sini dulu yuuk 🌸
+</a>
+
+<script>
+function bikinBunga(){
+    const bunga = document.createElement("div");
+    bunga.className = "bunga";
+    bunga.innerText = "🌸";
+    bunga.style.left = Math.random() * window.innerWidth + "px";
+    bunga.style.top = "0px";
+    document.body.appendChild(bunga);
+
+    setTimeout(()=>{
+        bunga.remove();
+    },4000);
+}
+
+setInterval(bikinBunga, 500);
+</script>
+
 </body>
 </html>
