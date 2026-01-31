@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Selamat Tidurrrr 🌸</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(120deg, #1a2a6c, #b21f1f, #fdbb2d);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Comic Sans MS', cursive;
+    }
+
+    h1 {
+        color: white;
+        font-size: 3em;
+        z-index: 10;
+        text-shadow: 0 0 10px pink;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 10px pink; }
+        to { text-shadow: 0 0 25px hotpink; }
+    }
+
+    .flower {
+        position: absolute;
+        top: -50px;
+        font-size: 30px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>🌸 Selamat Tidurrrr 🌙💤</h1>
+
+<script>
+    const flowers = ["🌸", "🌺", "🌼", "💐"];
+
+    function createFlower() {
+        const flower = document.createElement("div");
+        flower.classList.add("flower");
+        flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+
+        flower.style.left = Math.random() * window.innerWidth + "px";
+        flower.style.animationDuration = (3 + Math.random() * 5) + "s";
+        flower.style.fontSize = (20 + Math.random() * 30) + "px";
+
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+            flower.remove();
+        }, 8000);
+    }
+
+    setInterval(createFlower, 300);
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Selamat Tidurrrr 🌸</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(120deg, #1a2a6c, #b21f1f, #fdbb2d);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Comic Sans MS', cursive;
+    }
+
+    h1 {
+        color: white;
+        font-size: 3em;
+        z-index: 10;
+        text-shadow: 0 0 10px pink;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 10px pink; }
+        to { text-shadow: 0 0 25px hotpink; }
+    }
+
+    .flower {
+        position: absolute;
+        top: -50px;
+        font-size: 30px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>🌸 Selamat Tidurrrr 🌙💤</h1>
+
+<script>
+    const flowers = ["🌸", "🌺", "🌼", "💐"];
+
+    function createFlower() {
+        const flower = document.createElement("div");
+        flower.classList.add("flower");
+        flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+
+        flower.style.left = Math.random() * window.innerWidth + "px";
+        flower.style.animationDuration = (3 + Math.random() * 5) + "s";
+        flower.style.fontSize = (20 + Math.random() * 30) + "px";
+
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+            flower.remove();
+        }, 8000);
+    }
+
+    setInterval(createFlower, 300);
+</script>
+
+</body>
+</html>
