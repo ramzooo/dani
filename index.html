@@ -2,92 +2,87 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Selamat Bangun Tidur</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Link Bunga</title>
+
 <style>
-    body {
-        margin: 0;
-        height: 100vh;
-        background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Segoe UI', sans-serif;
-    }
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#fff5fb;
+    font-family: Arial, sans-serif;
+    overflow:hidden;
+}
 
-    .box {
-        text-align: center;
-        color: #ffffff;
-        background: rgba(0,0,0,0.25); /* 🔥 biar teks kebaca */
-        padding: 30px 40px;
-        border-radius: 20px;
-        animation: fadeIn 2s ease;
-        z-index: 2;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
+/* LINK UTAMA */
+.bunga-link{
+    position:relative;
+    font-size:8vw; /* GEDE di HP */
+    font-weight:bold;
+    text-decoration:none;
+    color:#ff4da6;
+    padding:20px 40px;
+    border-radius:20px;
+    background:#ffe6f2;
+    animation: glow 2s infinite alternate;
+}
 
-    h1 {
-        font-size: 36px;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+/* EFEK GLOW */
+@keyframes glow{
+    from{
+        box-shadow:0 0 10px #ff9ad5;
     }
+    to{
+        box-shadow:0 0 30px #ff4da6;
+    }
+}
 
-    p {
-        font-size: 18px;
-        margin-bottom: 25px;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-    }
+/* BUNGA */
+.bunga{
+    position:absolute;
+    width:25px;
+    height:25px;
+    background:🌸;
+    font-size:24px;
+    animation: jatuh 4s linear infinite;
+}
 
-    a {
-        padding: 12px 25px;
-        background: white;
-        color: #ee9ca7;
-        text-decoration: none;
-        border-radius: 30px;
-        font-weight: bold;
-        transition: 0.3s;
+@keyframes jatuh{
+    0%{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:1;
     }
-
-    a:hover {
-        transform: scale(1.1);
+    100%{
+        transform:translateY(300px) rotate(360deg);
+        opacity:0;
     }
-
-    .flower {
-        position: absolute;
-        top: -50px;
-        font-size: 24px;
-        animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-        to {
-            transform: translateY(110vh) rotate(360deg);
-        }
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+}
 </style>
 </head>
+
 <body>
 
-<div class="box">
-    <h1>Selamat Bangun Tidur di hari Minggu 01/02/2026 ☀️</h1>
-    <p>Semoga hari ini lembut seperti senyummu</p>
-    <a href="web1.html">Lanjutkan 💗</a>
-</div>
+<a href="https://google.com" class="bunga-link">
+    Masuk ke sini dulu yuuk 🌸
+</a>
 
 <script>
-    for (let i = 0; i < 25; i++) {
-        let flower = document.createElement("div");
-        flower.className = "flower";
-        flower.innerHTML = "🌸";
-        flower.style.left = Math.random() * 100 + "vw";
-        flower.style.animationDuration = (5 + Math.random() * 5) + "s";
-        document.body.appendChild(flower);
-    }
+function bikinBunga(){
+    const bunga = document.createElement("div");
+    bunga.className = "bunga";
+    bunga.innerText = "🌸";
+    bunga.style.left = Math.random() * window.innerWidth + "px";
+    bunga.style.top = "0px";
+    document.body.appendChild(bunga);
+
+    setTimeout(()=>{
+        bunga.remove();
+    },4000);
+}
+
+setInterval(bikinBunga, 500);
 </script>
 
 </body>
