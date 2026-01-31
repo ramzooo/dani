@@ -2,151 +2,97 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Selamat Tidurrrr 🌸</title>
+<title>Untukmu</title>
 <style>
     body {
         margin: 0;
         height: 100vh;
-        background: linear-gradient(120deg, #1a2a6c, #b21f1f, #fdbb2d);
-        overflow: hidden;
+        background: radial-gradient(circle, #ffe0f0, #ff9a9e);
         display: flex;
-        justify-content: center;
         align-items: center;
-        font-family: 'Comic Sans MS', cursive;
+        justify-content: center;
+        overflow: hidden;
+        font-family: 'Georgia', serif;
     }
 
-    h1 {
-        color: white;
-        font-size: 3em;
-        z-index: 10;
-        text-shadow: 0 0 10px pink;
-        animation: glow 2s infinite alternate;
+    .text {
+        color: #fff;
+        background: rgba(0,0,0,0.25); /* 🔥 penting */
+        padding: 35px 45px;
+        border-radius: 25px;
+        text-align: center;
+        max-width: 600px;
+        animation: fadeUp 2s ease;
+        z-index: 2;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     }
 
-    @keyframes glow {
-        from { text-shadow: 0 0 10px pink; }
-        to { text-shadow: 0 0 25px hotpink; }
+    .text p {
+        font-size: 20px;
+        line-height: 1.7;
+        margin-bottom: 15px;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     }
 
-    .flower {
+    .heart {
         position: absolute;
-        top: -50px;
-        font-size: 30px;
-        animation: fall linear infinite;
+        color: pink;
+        font-size: 20px;
+        animation: float 6s linear infinite;
     }
 
-    @keyframes fall {
-        0% {
-            transform: translateY(0) rotate(0deg);
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(110vh) rotate(360deg);
+    @keyframes float {
+        to {
+            transform: translateY(-120vh) scale(1.5);
             opacity: 0;
         }
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 </style>
 </head>
 <body>
 
-<h1>🌸 Selamat Tidurrrr 🌙💤</h1>
+<audio autoplay loop>
+    <source src="bandung.mp3" type="audio/mpeg">
+</audio>
+
+<div class="text">
+    <p><em>♪ ku bertemu denganmu,<br>
+    di sela sempit hidup ini</em></p>
+
+    <p>
+        Kau memang sederhana,<br>
+        tapi aku selalu seperti jatuh cinta.
+    </p>
+
+    <p>
+        Pemilik tatapan hangat,<br>
+        yang selalu ingin ku lihat.
+    </p>
+
+    <p>
+        Tanpa perlu melakukan banyak hal,<br>
+        kamu sudah membuat aku jatuh cinta.
+    </p>
+
+    <p><strong>Terima kasih 💗</strong></p>
+    <p><small>created by Ramdani</small></p>
+</div>
 
 <script>
-    const flowers = ["🌸", "🌺", "🌼", "💐"];
-
-    function createFlower() {
-        const flower = document.createElement("div");
-        flower.classList.add("flower");
-        flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
-
-        flower.style.left = Math.random() * window.innerWidth + "px";
-        flower.style.animationDuration = (3 + Math.random() * 5) + "s";
-        flower.style.fontSize = (20 + Math.random() * 30) + "px";
-
-        document.body.appendChild(flower);
-
-        setTimeout(() => {
-            flower.remove();
-        }, 8000);
+    for (let i = 0; i < 30; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💗";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "-20px";
+        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+        document.body.appendChild(heart);
     }
-
-    setInterval(createFlower, 300);
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<title>Selamat Tidurrrr 🌸</title>
-<style>
-    body {
-        margin: 0;
-        height: 100vh;
-        background: linear-gradient(120deg, #1a2a6c, #b21f1f, #fdbb2d);
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Comic Sans MS', cursive;
-    }
-
-    h1 {
-        color: white;
-        font-size: 3em;
-        z-index: 10;
-        text-shadow: 0 0 10px pink;
-        animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-        from { text-shadow: 0 0 10px pink; }
-        to { text-shadow: 0 0 25px hotpink; }
-    }
-
-    .flower {
-        position: absolute;
-        top: -50px;
-        font-size: 30px;
-        animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-        0% {
-            transform: translateY(0) rotate(0deg);
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(110vh) rotate(360deg);
-            opacity: 0;
-        }
-    }
-</style>
-</head>
-<body>
-
-<h1>🌸 Selamat Tidurrrr 🌙💤</h1>
-
-<script>
-    const flowers = ["🌸", "🌺", "🌼", "💐"];
-
-    function createFlower() {
-        const flower = document.createElement("div");
-        flower.classList.add("flower");
-        flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
-
-        flower.style.left = Math.random() * window.innerWidth + "px";
-        flower.style.animationDuration = (3 + Math.random() * 5) + "s";
-        flower.style.fontSize = (20 + Math.random() * 30) + "px";
-
-        document.body.appendChild(flower);
-
-        setTimeout(() => {
-            flower.remove();
-        }, 8000);
-    }
-
-    setInterval(createFlower, 300);
 </script>
 
 </body>
