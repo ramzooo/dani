@@ -1,89 +1,59 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Link Bunga</title>
-
-<style>
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    background:#fff5fb;
-    font-family: Arial, sans-serif;
-    overflow:hidden;
-}
-
-/* LINK UTAMA */
-.bunga-link{
-    position:relative;
-    font-size:8vw; /* GEDE di HP */
-    font-weight:bold;
-    text-decoration:none;
-    color:#ff4da6;
-    padding:20px 40px;
-    border-radius:20px;
-    background:#ffe6f2;
-    animation: glow 2s infinite alternate;
-}
-
-/* EFEK GLOW */
-@keyframes glow{
-    from{
-        box-shadow:0 0 10px #ff9ad5;
+  <meta charset="UTF-8">
+  <title>Maaf Ya</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f5f5f5;
+      margin-top: 100px;
     }
-    to{
-        box-shadow:0 0 30px #ff4da6;
+    h1 {
+      color: #333;
     }
-}
-
-/* BUNGA */
-.bunga{
-    position:absolute;
-    width:25px;
-    height:25px;
-    background:🌸;
-    font-size:24px;
-    animation: jatuh 4s linear infinite;
-}
-
-@keyframes jatuh{
-    0%{
-        transform:translateY(-50px) rotate(0deg);
-        opacity:1;
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
     }
-    100%{
-        transform:translateY(300px) rotate(360deg);
-        opacity:0;
+    #yesBtn {
+      background-color: #4CAF50;
+      color: white;
     }
-}
-</style>
+    #noBtn {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+    #floatingText {
+      position: absolute;
+      color: red;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
 </head>
+<body>  <h1>Eh hai, selamat datang 👋</h1>
+  <p>Aku Ramdani minta maaf yaaa untuk semuanya 🙏</p><button id="yesBtn" onclick="alert('Makasih ya udah maafin 😭❤️')">Iya, dimaafin</button> <button id="noBtn">Nggak dimaafin</button>
 
-<body>
+  <div id="floatingText">Eits ga kena 😜</div>  <script>
+    const noBtn = document.getElementById("noBtn");
+    const floatingText = document.getElementById("floatingText");
 
-<a href="https://google.com" class="bunga-link">
-    Masuk ke sini dulu yuuk 🌸
-</a>
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
 
-<script>
-function bikinBunga(){
-    const bunga = document.createElement("div");
-    bunga.className = "bunga";
-    bunga.innerText = "🌸";
-    bunga.style.left = Math.random() * window.innerWidth + "px";
-    bunga.style.top = "0px";
-    document.body.appendChild(bunga);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
 
-    setTimeout(()=>{
-        bunga.remove();
-    },4000);
-}
-
-setInterval(bikinBunga, 500);
-</script>
-
-</body>
+      floatingText.style.left = (x + 20) + "px";
+      floatingText.style.top = (y - 20) + "px";
+      floatingText.style.display = "block";
+    });
+  </script></body>
 </html>
